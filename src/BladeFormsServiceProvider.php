@@ -2,7 +2,9 @@
 
 namespace GridPrinciples\BladeForms;
 
-class BladeFormsServiceProvider {
+use Illuminate\Support\ServiceProvider;
+
+class BladeFormsServiceProvider extends ServiceProvider {
 
     public function boot()
     {
