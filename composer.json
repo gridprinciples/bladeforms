@@ -1,0 +1,15 @@
+{
+    "name": "gridprinciples/bladeforms",
+    "description": "A set of Laravel Blade files which generate HTML forms",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Greg Brock",
+            "email": "greg@gridprinciples.com"
+        }
+    ],
+    "require": {
+        "laravel/laravel": "^5.1",
+        "laravelcollective/html": "~5.0"
+    }
+}
