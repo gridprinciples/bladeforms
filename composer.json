@@ -1,5 +1,5 @@
 {
-    "name": "gridprinciples/bladeforms",
+    "name": "gridprinciples/blade-forms",
     "description": "A set of Laravel Blade files which generate HTML forms",
     "license": "MIT",
     "authors": [
