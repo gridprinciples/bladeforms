@@ -1,4 +1,4 @@
-@extends('snippets.form.block', [
+@extends('form::block', [
     'name' => isset($name) ? $name : '', // Send "name" through since it's not needed, unlike normal
 ])
 

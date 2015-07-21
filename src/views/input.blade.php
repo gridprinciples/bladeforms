@@ -1,4 +1,4 @@
-@extends('snippets.form.block')
+@extends('form::block')
 
 @section('inner')
     @if(isset($prefix) || isset($suffix))

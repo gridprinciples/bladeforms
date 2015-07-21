@@ -1,4 +1,4 @@
-@extends('snippets.form.block')
+@extends('form::block')
 
 @section('inner')
     @foreach($options as $k => $v)<div class="radio{{ isset($specify) && isset($specify[$k]) ? ' with-specification' : '' }}">

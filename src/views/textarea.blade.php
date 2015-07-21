@@ -1,4 +1,4 @@
-@extends('snippets.form.block')
+@extends('form::block')
 
 @section('inner')
     {!! Form::textarea($name, isset($value) ? $value : NULL, array_merge([

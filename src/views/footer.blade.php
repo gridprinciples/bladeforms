@@ -3,6 +3,6 @@
         @if(isset($cancel))
             <a href="{{ $cancel }}" class="btn btn-link">Cancel</a>
         @endif
-        @include('snippets.form.submit')
+        @include('form::submit')
     </div>
 </div>

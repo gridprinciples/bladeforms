@@ -2,7 +2,7 @@
 $multipleMode = (isset($options) && count($options) ? TRUE : FALSE);
 ?>
 
-@extends('snippets.form.block', [
+@extends('form::block', [
     'label' => $multipleMode ? $label : '&nbsp;',
 ])
 

@@ -1,4 +1,4 @@
-@extends('snippets.form.block')
+@extends('form::block')
 
 @section('inner')
     <select{!! isset($placeholder) ? ' placeholder="' . $placeholder . '"' : '' !!} name="{{ $name }}{{ isset($multiple) && $multiple ? '[]' : '' }}" class="form-control{{ !isset($basic) || !$basic ? ' selectize' : '' }}{{ isset($class) ? ' ' . $class : '' }}"{{ isset($multiple) && $multiple ? ' multiple' : '' }}>
