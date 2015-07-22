@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "laravel/laravel": "^5.1",
+        "laravel/framework": "^5.1",
         "laravelcollective/html": "~5.0"
     },
     "autoload": {
