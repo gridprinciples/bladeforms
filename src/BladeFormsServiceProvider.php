@@ -8,8 +8,13 @@ class BladeFormsServiceProvider extends ServiceProvider {
 
     public function boot()
     {
-        // publish the view files
+        // load the view files
         $this->loadViewsFrom(__DIR__ . '/views', 'form');
+
+        // publish the view files
+        $this->publishes([
+            __DIR__ . '/views' => base_path('resources/views/vendor/form'),
+        ]);
     }
 
     public function register()
