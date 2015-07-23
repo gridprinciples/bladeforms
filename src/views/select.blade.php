@@ -1,7 +1,7 @@
 @extends('form::block')
 
 @section('inner')
-    <select{!! isset($placeholder) ? ' placeholder="' . $placeholder . '"' : '' !!} name="{{ $name }}{{ isset($multiple) && $multiple ? '[]' : '' }}" class="form-control{{ !isset($basic) || !$basic ? ' selectize' : '' }}{{ isset($class) ? ' ' . $class : '' }}"{{ isset($multiple) && $multiple ? ' multiple' : '' }}>
+    <select name="{{ $name }}{{ isset($multiple) && $multiple ? '[]' : '' }}"{!! isset($placeholder) ? ' placeholder="' . $placeholder . '"' : '' !!} class="form-control{{ !isset($basic) || !$basic ? ' selectize' : '' }}{{ isset($class) ? ' ' . $class : '' }}"{{ isset($multiple) && $multiple ? ' multiple' : '' }}{!! isset($id) && $id ? ' id="' . $id . '"' : '' !!}>
     @foreach($options as $k => $v)
         <option value="{{ $k }}"{{
                 Input::old($name)
@@ -11,5 +11,5 @@
                         (isset($value) && in_array($k, (array) $value) ? ' selected="selected"' : '')
             }}>{{ strip_tags($v) }}</option>
         @endforeach
-        </select>
+    </select>
 @overwrite
