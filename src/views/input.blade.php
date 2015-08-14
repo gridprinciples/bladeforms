@@ -4,7 +4,7 @@
     @if(isset($prefix) || isset($suffix))
         <div class="input-group {{ $group_class or '' }}">
         @if(isset($prefix))
-            <div class="input-group-addon">{!! $prefix !!}</div>
+            <div class="input-group-{{ isset($prefix_is_button) && $prefix_is_button ? 'btn' : 'addon' }}">{!! $prefix !!}</div>
         @endif
     @endif
     @if(isset($password) && $password)
@@ -18,7 +18,7 @@
     @endif
     @if(isset($prefix) || isset($suffix))
             @if(isset($suffix))
-                <div class="input-group-addon">{!! $suffix !!}</div>
+                <div class="input-group-{{ isset($suffix_is_button) && $suffix_is_button ? 'btn' : 'addon' }}">{!! $suffix !!}</div>
             @endif
         </div>
     @endif
