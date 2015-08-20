@@ -7,7 +7,7 @@
     @if(!isset($control_size_class) || $control_size_class)
     <div class="{{ $control_size_class or 'col-sm-8' }}">
     @endif
-        @yield('inner')
+        @yield('inner.form.group')
         @if($errors->first($name) || (isset($help) && $help))
             <div class="help-block">
                 @if($errors->first($name))

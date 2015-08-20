@@ -6,7 +6,7 @@ $multipleMode = (isset($options) && count($options) ? TRUE : FALSE);
     'label' => $multipleMode ? $label : '&nbsp;',
 ])
 
-@section('inner')
+@section('inner.form.group')
     @if($multipleMode)
         @foreach($options as $k => $v)
             <div class="checkbox">

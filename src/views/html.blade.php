@@ -2,6 +2,6 @@
     'name' => isset($name) ? $name : '', // Send "name" through since it's not needed, unlike normal
 ])
 
-@section('inner')
+@section('inner.form.group')
     {!! $content or '' !!}
 @overwrite

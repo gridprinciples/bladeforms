@@ -1,6 +1,6 @@
 @extends('form::block')
 
-@section('inner')
+@section('inner.form.group')
     <select name="{{ $name }}{{ isset($multiple) && $multiple ? '[]' : '' }}"{!! isset($placeholder) ? ' placeholder="' . $placeholder . '"' : '' !!} class="form-control{{ !isset($basic) || !$basic ? ' selectize' : '' }}{{ isset($class) ? ' ' . $class : '' }}"{{ isset($multiple) && $multiple ? ' multiple' : '' }}{!! isset($id) && $id ? ' id="' . $id . '"' : '' !!}>
     @foreach($options as $k => $v)
         <option value="{{ $k }}"{{

@@ -1,6 +1,6 @@
 @extends('form::block')
 
-@section('inner')
+@section('inner.form.group')
     @if(isset($prefix) || isset($suffix))
         <div class="input-group {{ $group_class or '' }}">
         @if(isset($prefix))

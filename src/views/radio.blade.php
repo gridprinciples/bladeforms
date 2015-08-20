@@ -1,6 +1,6 @@
 @extends('form::block')
 
-@section('inner')
+@section('inner.form.group')
     @foreach($options as $k => $v)<div class="radio{{ isset($specify) && isset($specify[$k]) ? ' with-specification' : '' }}">
         {!! Form::radio($name, $k, isset($value) ? $value == $k : null, ['id' => 'c' . preg_replace('/[^a-z0-9\-_]/', '', strtolower($name . $k))]) !!}
         <label for="c{{ preg_replace('/[^a-z0-9\-_]/', '', strtolower($name . $k)) }}">
