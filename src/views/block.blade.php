@@ -1,3 +1,4 @@
+<?php $forced_error = isset($error) ? $error : false; ?>
 <div class="{{ $errors->first($name) ? ' has-error' : '' }} {{ $form_group_class or 'form-group' }}">
     @if(!isset($label) || $label !== FALSE)
         <label for="{{ $id or '' }}" class="{{ $label_class or 'col-sm-4' }} control-label">
