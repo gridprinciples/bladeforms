@@ -8,9 +8,11 @@
     <div class="{{ $control_size_class or 'col-sm-8' }}">
     @endif
         @yield('inner.form.group')
-        @if($errors->first($name) || (isset($help) && $help))
+        @if($forced_error || $errors->first($name) || (isset($help) && $help))
             <div class="help-block">
-                @if($errors->first($name))
+                @if($forced_error)
+                    {!! $forced_error !!}
+                @elseif($errors->first($name))
                     {!! $errors->first($name) ? $errors->first($name) : '' !!}
                 @else
                     {!! $help !!}
