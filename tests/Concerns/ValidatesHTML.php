@@ -9,7 +9,7 @@ trait ValidatesHTML
 {
     protected function xpathCheckClass(string $css_class)
     {
-        return 'contains(concat(" ",normalize-space(@class)," ")," ' . trim($css_class) . ' ")';
+        return 'contains(concat(" ",normalize-space(@class)," ")," '.trim($css_class).' ")';
     }
 
     protected function assertHtmlContainsNode(View|string $html, string $nodeQuery)

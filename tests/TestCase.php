@@ -2,14 +2,14 @@
 
 namespace GridPrinciples\BladeForms\Tests;
 
-use Orchestra\Testbench\TestCase as Orchestra;
 use GridPrinciples\BladeForms\BladeFormsServiceProvider;
 use Illuminate\Foundation\Testing\Concerns\InteractsWithViews;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
-    use InteractsWithViews;
     use Concerns\ValidatesHTML;
+    use InteractsWithViews;
 
     protected function setUp(): void
     {

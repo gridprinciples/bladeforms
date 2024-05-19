@@ -2,14 +2,14 @@
 
 namespace GridPrinciples\BladeForms\View\Components;
 
-use Illuminate\View\Component;
 use GridPrinciples\BladeForms\Concerns;
+use Illuminate\View\Component;
 
 class SelectOption extends Component
 {
+    use Concerns\GeneratesAscendingIDs;
     use Concerns\HasLabel;
     use Concerns\HasWrapper;
-    use Concerns\GeneratesAscendingIDs;
 
     public function __construct(
         public ?string $name = null,

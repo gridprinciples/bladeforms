@@ -3,7 +3,7 @@
 namespace GridPrinciples\BladeForms\Tests;
 
 class CheckboxTest extends TestCase
-{    
+{
     public function test_it_can_render_as_a_lone_checkbox()
     {
         $output = $this->withViewErrors([])
@@ -128,7 +128,7 @@ class CheckboxTest extends TestCase
         $view = $this->withViewErrors([
             'your_email' => [
                 'This field is required.',
-            ]
+            ],
         ])->blade('<x-form::checkbox-list :options="[
                 \'yes\' => \'Yes\',
                 \'no\' => \'No\',
@@ -159,7 +159,7 @@ class CheckboxTest extends TestCase
 
         $this->assertHtmlContainsNode($view, '//*[@id="bloober_group"]//input[@type="checkbox"][@name="bloober[]"]');
 
-        $this->assertHtmlContainsNode($view, '//*[' . $this->xpathCheckClass('mb-7') . ']//input[@type="checkbox"][@name="bloober[]"]');
+        $this->assertHtmlContainsNode($view, '//*['.$this->xpathCheckClass('mb-7').']//input[@type="checkbox"][@name="bloober[]"]');
     }
 
     public function test_it_can_add_attributes_to_the_label()
@@ -180,7 +180,7 @@ class CheckboxTest extends TestCase
 
         $this->assertHtmlContainsNode($view, '//*[@id="bloober_special"]//input[@type="checkbox"][@name="bloober[]"]');
 
-        $this->assertHtmlContainsNode($view, '//*[' . $this->xpathCheckClass('mb-11') . ']//input[@type="checkbox"][@name="bloober[]"]');
+        $this->assertHtmlContainsNode($view, '//*['.$this->xpathCheckClass('mb-11').']//input[@type="checkbox"][@name="bloober[]"]');
     }
 
     public function test_it_can_set_arbitrary_attributes_on_the_input()
@@ -195,10 +195,10 @@ class CheckboxTest extends TestCase
 
         $view->assertSeeInOrder([
             '<input',
-                ':something="{\'success\':true}"',
+            ':something="{\'success\':true}"',
             '/>',
             '<input',
-                'data-key="42"',
+            'data-key="42"',
             '/>',
         ], false);
     }

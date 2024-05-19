@@ -8,7 +8,7 @@ trait CanHaveOptions
 
     protected function configureOptions(): void
     {
-        if($this->optionsAreEnabled()) {
+        if ($this->optionsAreEnabled()) {
             $this->options = collect($this->options);
         }
     }
