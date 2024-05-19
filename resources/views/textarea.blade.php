@@ -4,5 +4,5 @@
         'type' => ! $attributes->has('type') ? 'text' : null,
         'aria-describedby' => $id . '_feedback',
         'required' => $required ? '' : null,
-    ]) }}>{{ $value }}</textarea>
+    ]) }}>{{ $value ?: $slot }}</textarea>
 </x-form::input-wrapper>
