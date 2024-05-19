@@ -11,6 +11,7 @@ class Form extends Component
         public ?string $action = null,
         public ?string $get = null,
         public ?string $post = null,
+        public ?string $put = null,
         public ?string $patch = null,
         public ?string $delete = null,
         public string $method = 'POST',
@@ -24,6 +25,9 @@ class Form extends Component
             } elseif ($post) {
                 $this->action = $post;
                 $this->method = 'POST';
+            } elseif ($put) {
+                $this->action = $put;
+                $this->method = 'PUT';
             } elseif ($patch) {
                 $this->action = $patch;
                 $this->method = 'PATCH';

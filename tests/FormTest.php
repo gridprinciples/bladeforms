@@ -52,6 +52,14 @@ class FormTest extends TestCase
         $this->assertHtmlDoesntContainNode($output, '//input[@name="_method"]');
     }
 
+    public function test_it_works_via_put_shortcut()
+    {
+        $output = $this->blade('<x-form put="/search" />');
+
+        $this->assertHtmlContainsNode($output, '//form[@method="POST"][@action="/search"]');
+        $this->assertHtmlContainsNode($output, '//input[@name="_method"][@value="PUT"]');
+    }
+
     public function test_it_works_via_patch_shortcut()
     {
         $output = $this->blade('<x-form patch="/search" />');
