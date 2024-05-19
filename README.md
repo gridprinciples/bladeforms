@@ -5,7 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/gridprinciples/blade-forms/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/gridprinciples/blade-forms/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/gridprinciples/blade-forms.svg?style=flat-square)](https://packagist.org/packages/gridprinciples/blade-forms)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+A set of Blade components useful for rendering basic, fully-accessible HTML forms.  CSS and JS is not included, but Tailwind (and possibly other framework) presets are planned.
 
 ## Installation
 
@@ -29,7 +29,7 @@ php artisan vendor:publish --tag="blade-forms-views"
 
 ## Usage
 
-```php
+```blade
 <x-form::input 
     name="first_name" 
     label="Your first name" 
