@@ -30,19 +30,30 @@ php artisan vendor:publish --tag="blade-forms-views"
 ## Usage
 
 ```blade
-<x-form::input 
-    name="first_name" 
-    label="Your first name" 
-    help="The one you were born with"
-    required
-    />
-
-<x-form::input 
-    name="age"
-    type="number" 
-    placeholder="Optional."
-    label="Your age" 
-    />
+<x-form :post="route('form-submission-route')">
+    <x-form::input 
+        name="first_name" 
+        label="Your first name" 
+        help="The one you were born with"
+        required
+        />
+    <x-form::radio-buttons 
+        name="weekday"
+        label="Preferred weekday" 
+        :options="[
+            'mo' => 'Monday',
+            'tu' => 'Tuesday',
+            'we' => 'Wednesday',
+            'th' => 'Thursday',
+            'fr' => 'Friday',
+        ]"
+        required
+        />
+    <x-form::checkbox
+        name="agree"
+        label="Do you agree?"
+        />
+</x-form>
 ```
 
 Result:
