@@ -1,6 +1,5 @@
 {
     "name": "gridprinciples/blade-forms",
-    "version": "0.2.0",
     "description": "CSS-agnostic form rendering via Laravel Blade",
     "keywords": [
         "Grid Principles",
