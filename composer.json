@@ -1,20 +1,75 @@
 {
     "name": "gridprinciples/blade-forms",
-    "description": "A set of Laravel Blade files which generate HTML forms",
+    "version": "0.2.0",
+    "description": "CSS-agnostic form rendering via Laravel Blade",
+    "keywords": [
+        "Grid Principles",
+        "laravel",
+        "blade-forms"
+    ],
+    "homepage": "https://github.com/gridprinciples/blade-forms",
     "license": "MIT",
     "authors": [
         {
             "name": "Greg Brock",
-            "email": "greg@gridprinciples.com"
+            "email": "greg@gridprinciples.com",
+            "role": "Developer"
         }
     ],
     "require": {
-        "laravel/framework": "^5.1",
-        "laravelcollective/html": "~5.0"
+        "php": "^8.2",
+        "illuminate/contracts": "^11.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.14",
+        "nunomaduro/collision": "^8.1.1",
+        "orchestra/testbench": "^9.0.0",
+        "phpunit/phpunit": "^11.1",
+        "symfony/dom-crawler": "^7.0"
     },
     "autoload": {
         "psr-4": {
-            "GridPrinciples\\BladeForms\\": "src/"
+            "GridPrinciples\\BladeForms\\": "src/",
+            "GridPrinciples\\BladeForms\\Database\\Factories\\": "database/factories/"
         }
-    }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GridPrinciples\\BladeForms\\Tests\\": "tests/",
+            "Workbench\\App\\": "workbench/app/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@composer run prepare",
+        "clear": "@php vendor/bin/testbench package:purge-blade-forms --ansi",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi",
+        "build": [
+            "@composer run prepare",
+            "@php vendor/bin/testbench workbench:build --ansi"
+        ],
+        "start": [
+            "Composer\\Config::disableProcessTimeout",
+            "@composer run build",
+            "@php vendor/bin/testbench serve"
+        ],
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/phpunit --colors --testdox",
+        "test-coverage": "vendor/bin/phpunit --coverage-html ./build/coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GridPrinciples\\BladeForms\\BladeFormsServiceProvider"
+            ],
+            "aliases": {
+                "BladeForms": "GridPrinciples\\BladeForms\\Facades\\BladeForms"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
