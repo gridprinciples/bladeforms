@@ -1,7 +1,7 @@
 @aware(['label', 'id', 'name', 'inputGroup', 'help', 'required', 'error'])
 
 <fieldset {{ $attributes }}>
-    @if ($label->hasActualContent() || ! empty(array_filter($label->attributes->all())))
+    @if ($label->hasActualContent() || ! empty(array_filter($label->attributes->getAttributes())))
     <legend {{ $label->attributes }}>{{ $label }}@if($required)@include('blade-forms::snippets.required-label')@endif</legend>
     @endif
     <div {{ $inputGroup->attributes }}>

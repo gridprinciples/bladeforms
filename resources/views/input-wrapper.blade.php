@@ -1,7 +1,7 @@
 @aware(['label', 'id', 'name', 'inputGroup', 'help', 'required', 'error'])
 
 <div {{ $attributes }}>
-    @if ($label->hasActualContent() || ! empty(array_filter($label->attributes->all())))
+    @if ($label->hasActualContent() || ! empty(array_filter($label->attributes->getAttributes())))
     <label {{ $label->attributes->merge(['for' => $id]) }}>{{ $label }}@if($required)@include('blade-forms::snippets.required-label')@endif</label>
     @endif
     <div {{ $inputGroup->attributes }}>
