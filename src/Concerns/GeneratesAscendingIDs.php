@@ -2,8 +2,8 @@
 
 namespace GridPrinciples\BladeForms\Concerns;
 
-use Illuminate\Support\Str;
 use GridPrinciples\BladeForms\Facades\BladeForms;
+use Illuminate\Support\Str;
 
 trait GeneratesAscendingIDs
 {
@@ -17,7 +17,7 @@ trait GeneratesAscendingIDs
     protected function generateID(): string
     {
         $key = Str::slug($this->name ?: 'input', '_');
-        
-        return $key . '_' . BladeForms::getAscendingID($key);
+
+        return $key.'_'.BladeForms::getAscendingID($key);
     }
 }

@@ -89,7 +89,7 @@ class FormTextareaTest extends TestCase
         $view = $this->withViewErrors([
             'your_email' => [
                 'This field is required.',
-            ]
+            ],
         ])->blade('<x-form::textarea name="your_email" id="email_input" />');
 
         $this->assertHtmlContainsNode($view, '//textarea[@aria-describedby="email_input_feedback"]');
@@ -114,7 +114,7 @@ class FormTextareaTest extends TestCase
 
         $this->assertHtmlContainsNode($view, '//*[@id="bloober_group"]//textarea[@name="bloober"]');
 
-        $this->assertHtmlContainsNode($view, '//*[' . $this->xpathCheckClass('mb-7') . ']//textarea[@name="bloober"]');
+        $this->assertHtmlContainsNode($view, '//*['.$this->xpathCheckClass('mb-7').']//textarea[@name="bloober"]');
     }
 
     public function test_it_can_add_attributes_to_the_label()
@@ -132,7 +132,7 @@ class FormTextareaTest extends TestCase
 
         $this->assertHtmlContainsNode($view, '//*[@id="bloober_special"]//textarea[@name="bloober"]');
 
-        $this->assertHtmlContainsNode($view, '//*[' . $this->xpathCheckClass('mb-11') . ']//textarea[@name="bloober"]');
+        $this->assertHtmlContainsNode($view, '//*['.$this->xpathCheckClass('mb-11').']//textarea[@name="bloober"]');
     }
 
     public function test_it_can_set_arbitrary_attributes_on_the_textarea()

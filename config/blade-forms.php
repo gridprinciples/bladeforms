@@ -4,7 +4,7 @@
 return [
     /**
      * The namespace for loaded Blade components.
-     * 
+     *
      * If you're already using the `form` namespace, i.e. `<x-form::input />`,
      * you can change the package namespace to avoid collisions.
      */
@@ -12,7 +12,7 @@ return [
 
     /**
      * The name of the Blade component to use for form elements.
-     * 
+     *
      * If you're already using <x-form />, you can change it here.
      * This is unrelated to the namespace above.
      */

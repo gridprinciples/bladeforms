@@ -3,13 +3,13 @@
 namespace GridPrinciples\BladeForms\Tests;
 
 class InputTest extends TestCase
-{    
+{
     public function test_it_sets_a_default_type()
     {
         $this->withViewErrors([]);
 
         $output = $this->blade('<x-form::input />');
-        
+
         $this->assertHtmlContainsNode($output, '//input[@type="text"]');
     }
 
@@ -111,7 +111,7 @@ class InputTest extends TestCase
         $view = $this->withViewErrors([
             'your_email' => [
                 'This field is required.',
-            ]
+            ],
         ])->blade('<x-form::input name="your_email" id="email_input" />');
 
         $this->assertHtmlContainsNode($view, '//input[@aria-describedby="email_input_feedback"]');
@@ -136,7 +136,7 @@ class InputTest extends TestCase
 
         $this->assertHtmlContainsNode($view, '//*[@id="bloober_group"]//input[@name="bloober"]');
 
-        $this->assertHtmlContainsNode($view, '//*[' . $this->xpathCheckClass('mb-7') . ']//input[@name="bloober"]');
+        $this->assertHtmlContainsNode($view, '//*['.$this->xpathCheckClass('mb-7').']//input[@name="bloober"]');
     }
 
     public function test_it_can_add_attributes_to_the_label()
@@ -154,7 +154,7 @@ class InputTest extends TestCase
 
         $this->assertHtmlContainsNode($view, '//*[@id="bloober_special"]//input[@name="bloober"]');
 
-        $this->assertHtmlContainsNode($view, '//*[' . $this->xpathCheckClass('mb-11') . ']//input[@name="bloober"]');
+        $this->assertHtmlContainsNode($view, '//*['.$this->xpathCheckClass('mb-11').']//input[@name="bloober"]');
     }
 
     public function test_it_can_set_arbitrary_attributes_on_the_input()
@@ -168,7 +168,7 @@ class InputTest extends TestCase
         $view->assertSeeInOrder([
             '<input',
             ':something-else="{\'success\':true}"',
-            '/>'
+            '/>',
         ], false);
     }
 }

@@ -3,7 +3,7 @@
 namespace GridPrinciples\BladeForms\Tests;
 
 class SelectTest extends TestCase
-{    
+{
     public function test_it_can_render()
     {
         $output = $this->withViewErrors([])
@@ -19,8 +19,6 @@ class SelectTest extends TestCase
         $this->assertHtmlContainsNode($output, '//select/option[@value="voy"][contains(text(),"Voyager")]');
         $this->assertHtmlContainsNode($output, '//label[contains(text(),"Which show do you like?")]');
     }
-
-
 
     public function test_it_can_override_default_id()
     {
@@ -82,7 +80,6 @@ class SelectTest extends TestCase
         $view = $this->withViewErrors([])
             ->blade('<x-form::select label="Oh bother" />');
 
-
         $this->assertHtmlContainsNode($view, '//label[@for][contains(text(),"Oh bother")]');
 
         $this->assertHtmlDoesntContainNode($view, '//select[@label]');
@@ -143,7 +140,7 @@ class SelectTest extends TestCase
         $view = $this->withViewErrors([
             'your_email' => [
                 'This field is required.',
-            ]
+            ],
         ])->blade('<x-form::select name="your_email" id="email_input" />');
 
         $this->assertHtmlContainsNode($view, '//select[@aria-describedby="email_input_feedback"]');
@@ -168,7 +165,7 @@ class SelectTest extends TestCase
 
         $this->assertHtmlContainsNode($view, '//*[@id="bloober_group"]//select[@name="bloober"]');
 
-        $this->assertHtmlContainsNode($view, '//*[' . $this->xpathCheckClass('mb-7') . ']//select[@name="bloober"]');
+        $this->assertHtmlContainsNode($view, '//*['.$this->xpathCheckClass('mb-7').']//select[@name="bloober"]');
     }
 
     public function test_it_can_add_attributes_to_the_label()
@@ -186,7 +183,7 @@ class SelectTest extends TestCase
 
         $this->assertHtmlContainsNode($view, '//*[@id="bloober_special"]//select[@name="bloober"]');
 
-        $this->assertHtmlContainsNode($view, '//*[' . $this->xpathCheckClass('mb-11') . ']//select[@name="bloober"]');
+        $this->assertHtmlContainsNode($view, '//*['.$this->xpathCheckClass('mb-11').']//select[@name="bloober"]');
     }
 
     public function test_it_uses_the_grouping_name_when_multiple_is_passed()
@@ -220,7 +217,7 @@ class SelectTest extends TestCase
     public function test_it_prefills_correctly_when_multiple_is_passed_and_optgroups_are_in_use()
     {
         $this->markTestSkipped('Optgroups are not yet supported.');
-        
+
         $view = $this->withViewErrors([])
             ->blade('<x-form::select name="categories" multiple :options="[
                 \'Finicky Options\' => [

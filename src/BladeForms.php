@@ -9,17 +9,14 @@ class BladeForms
     /**
      * Get the next ascending identifier for a given key.
      * We use this to avoid ID collisions in the DOM.
-     * 
+     *
      * Uses $ascendingIdentifierZerofill to determine how many zeroes to pad the ID with.
-     * 
+     *
      * BladeForms::getAscendingID('foo') will return '01', '02', '03', etc.
-     * 
-     * @param string $key 
-     * @return string 
      */
     public function getAscendingID(string $key): string
     {
-        if (!isset($this->ascendingIDs[$key])) {
+        if (! isset($this->ascendingIDs[$key])) {
             $this->ascendingIDs[$key] = 0;
         }
 
