@@ -31,12 +31,14 @@ php artisan vendor:publish --tag="blade-forms-views"
 
 ```blade
 <x-form :post="route('form-submission-route')">
+
     <x-form::input 
         name="first_name" 
         label="Your first name" 
         help="The one you were born with"
         required
         />
+
     <x-form::radio-buttons 
         name="weekday"
         label="Preferred weekday" 
@@ -49,10 +51,12 @@ php artisan vendor:publish --tag="blade-forms-views"
         ]"
         required
         />
+
     <x-form::checkbox
         name="agree"
         label="Do you agree?"
         />
+        
 </x-form>
 ```
 

@@ -20,7 +20,7 @@ class BladeFormsServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'blade-forms');
 
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/forms'),
+            __DIR__.'/../resources/views' => resource_path('views/vendor/blade-forms'),
         ], 'blade-forms');
 
         Blade::componentNamespace(
