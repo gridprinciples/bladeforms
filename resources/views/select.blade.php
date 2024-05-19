@@ -6,6 +6,8 @@
         'aria-describedby' => $id . '_feedback',
         'required' => $required ? '' : null,
     ]) }}>
+        <option></option>
+
         @foreach($options as $optionValue => $label)
             @if(is_array($label))
                 @php
