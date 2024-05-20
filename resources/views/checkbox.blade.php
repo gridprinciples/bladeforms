@@ -8,7 +8,7 @@
                 'value' => $value,
                 'checked' => (bool) old($name, $checked),
                 'aria-describedby' => $id . '_feedback',
-            ]) }} />
+            ])->except(['required']) }} />
             <span {{ $label->attributes }}>{{ $label }}</span>
         </label>
     </x-form::control-set-wrapper>
@@ -20,7 +20,7 @@
             'value' => $value,
             'checked' => $checked ? 'checked' : null,
             'aria-describedby' => $id . '_feedback',
-        ]) }} />
+        ])->except(['required']) }} />
         <span {{ $label->attributes }}>{{ $label }}</span>
     </label>
 @endif

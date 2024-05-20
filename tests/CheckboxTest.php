@@ -114,7 +114,7 @@ class CheckboxTest extends TestCase
 
         $this->assertHtmlContainsNode($view, '//legend[contains(text(),"*")]');
         $this->assertHtmlContainsNode($view, '//legend//*[contains(text(),"(required)")]');
-        $this->assertHtmlContainsNode($view, '//input[@type="checkbox"][@required]');
+        $this->assertHtmlDoesntContainNode($view, '//input[@type="checkbox"][@required]');
 
         $view = $this->withViewErrors([])
             ->blade('<x-form::checkbox-list label="Given Name" :options="[\'yes\' => \'Yes\', \'no\' => \'No\']" />');
