@@ -4,8 +4,14 @@ namespace GridPrinciples\BladeForms\Concerns;
 
 trait HasInputValue
 {
+    protected $fillValue = true;
+
     protected function configureValue(): void
     {
-        $this->value = old($this->name, $this->value);
+        if (count(old() ?? [])) {
+            if ($this->fillValue) {
+                $this->value = old($this->name);
+            }
+        }
     }
 }

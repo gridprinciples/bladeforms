@@ -35,6 +35,8 @@ abstract class ControlComponent extends Component
         public array|ComponentAttributeBag $labelAttributes = [],
         public array|Collection|Arrayable $options = [],
         public bool $multiple = false,
+        public bool $checked = false,
+        public bool $standalone = true,
     ) {
         $this->configureID();
         $this->configureWrapper();

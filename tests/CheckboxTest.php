@@ -13,6 +13,19 @@ class CheckboxTest extends TestCase
         $this->assertHtmlContainsNode($output, '//label/span[contains(text(),"Remember me")]');
     }
 
+    public function test_lone_checkboxes_have_help_and_errors()
+    {
+        $output = $this->withViewErrors([
+            'remember' => [
+                'This field is required.',
+            ],
+        ])->blade('<x-form::checkbox id="remember" name="remember" label="Remember me" help="Check this box to remember you." />');
+
+        $this->assertHtmlContainsNode($output, '//*[@aria-describedby="remember_feedback"]');
+        $this->assertHtmlContainsNode($output, '//*[@id="remember_feedback"]//*[contains(text(),"This field is required.")]');
+        $this->assertHtmlContainsNode($output, '//*[contains(text(),"Check this box to remember you.")]');
+    }
+
     public function test_it_can_render_as_checkbox_list()
     {
         $output = $this->withViewErrors([])

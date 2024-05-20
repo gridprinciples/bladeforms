@@ -22,6 +22,7 @@
             :checked="is_array($value) ? Arr::has(array_flip($value), $optionValue) : $value === $optionValue"
             :aria-describedby="$describedBy"
             :attributes="new \Illuminate\View\ComponentAttributeBag($attributes)" 
+            :standalone="false"
             />
     @endforeach
 </x-form::control-set-wrapper>
