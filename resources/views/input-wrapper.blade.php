@@ -9,7 +9,7 @@
     </div>
     <div id="{{ $id }}_feedback">
         @if ($errors->has($name) || $error)
-        <div>{{ $error ?: $errors->first($name) }}</div>
+        <div class="form-error">{{ $error ?: $errors->first($name) }}</div>
         @endif
         @if ($help->hasActualContent())
         <div {{ $help->attributes }}>{{ $help }}</div>
